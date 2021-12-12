@@ -1,12 +1,13 @@
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
 public class Play extends JPanel implements Runnable{
     private JFrame frame;
-    private Player py;
+    private Player player;
     private Farm farm;
+    private Thread thread;
+    public static boolean state = true;
     FarmShop farmShop;
     TownShop townShop;
     Town town;
@@ -19,17 +20,17 @@ public class Play extends JPanel implements Runnable{
     
     public Play() {
         frame = new JFrame();
-        py = new Player();
+        player = new Player();
         farm = new Farm();
-        farmShop = new FarmShop(farm, py);
+        farmShop = new FarmShop(farm, player);
         town = new Town();
-        townShop = new TownShop(town, py);
+        townShop = new TownShop(town, player);
         castle = new Castle();
-        castleShop = new CastleShop(castle, py);
+        castleShop = new CastleShop(castle, player);
         market = new Market();
-        marketShop = new MarketShop(market, py);
+        marketShop = new MarketShop(market, player);
         military = new Military();
-        militaryShop = new MilitaryShop(military, py);
+        militaryShop = new MilitaryShop(military, player);
         this.setLayout(new BorderLayout());
         this.setSize(1280, 720);
         this.add(farm);
@@ -48,24 +49,23 @@ public class Play extends JPanel implements Runnable{
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         System.out.println(farm.getLevel());
-        Thread thread = new Thread(this);
+        thread = new Thread(this);
         thread.start();
     }
     
     public static void main(String[] args) {
-        new Test();
+        new Play();
     }
-    public void run(){
+    public synchronized void run(){
         while(true){ 
-            py.collectMoney(farm.getValue()+town.getValue()+castle.getValue()+market.getValue()+military.getValue());
-            System.out.println(py.getMoney());
+            player.collectMoney(farm.getValue()+town.getValue()+castle.getValue()+market.getValue()+military.getValue(), state);
+            System.out.println(player.getMoney());
             try{
-                Thread.sleep(1000);
+                thread.sleep(1000);
             }
             catch(InterruptedException e){
                 System.out.println(e);
             }
-            
         }
     }
 }

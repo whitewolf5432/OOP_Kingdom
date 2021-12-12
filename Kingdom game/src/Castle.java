@@ -5,7 +5,6 @@ public class Castle extends JPanel implements PlaceInterface{
     private int level;
     private int value;
     private long cost;
-    private Image castle;
     
     public Castle() {
         this.cost = 5;
@@ -14,55 +13,11 @@ public class Castle extends JPanel implements PlaceInterface{
         
     }
     public void paintComponent(Graphics g) {
-        castle = new ImageIcon("Image/Place/castle_"+this.level+".png").getImage();
-        switch (this.level) {
-            case 0:
-                g.drawImage(castle, 0, 0, null);
-                break;
-            case 1:
-                g.drawImage(castle, 0, 0, null);
-                break;
-            case 2:
-                g.drawImage(castle, 0, 0, null);
-                break;
-            case 3:
-                g.drawImage(castle, 0, 0, null);
-                break;
-            case 4:
-                g.drawImage(castle, 0, 0, null);
-                break;
-            case 5:
-                g.drawImage(castle, 0, 0, null);
-                break;
-            case 6:
-                g.drawImage(castle, 0, 0, null);
-                break;
-            case 7:
-                g.drawImage(castle, 0, 0, null);
-                break;
-            case 8:
-                g.drawImage(castle, 0, 0, null);
-                break;
-            case 9:
-                g.drawImage(castle, 0, 0, null);
-                break;
-            case 10:
-                g.drawImage(castle, 0, 0, null);
-                break;
-            default:
-                g.drawImage(castle, 0, 0, null);
-                break;
-        }
+        g.drawImage(new ImageIcon("Image/Place/castle_"+this.level+".png").getImage(), 0, 0, null);
     }
-
-    public void setLevel() {
-        
-    }
-
     public int getLevel() {
         return level;
     }
-
     public synchronized void upLevel() {
         switch (++this.level) {
             case 1:
@@ -110,15 +65,10 @@ public class Castle extends JPanel implements PlaceInterface{
         }
         this.repaint();
     }
-
     public int getValue() {
         return value;
     }
-
     public long getCost() {
         return cost;
     }
-
- 
-    
 }

@@ -1,24 +1,33 @@
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import javax.swing.*;
-public class Build implements Runnable{
+public class Build implements Runnable, KeyListener{
     private boolean state;
     public boolean tete;
-    public JFrame frame = new JFrame("Teller GUI");
-    private JPanel topPanel = new JPanel();
-    private JPanel botPanel = new JPanel();
-
+    public JFrame frame;
+    private JPanel top, bot;
+    private JLabel test;
+    
     public Build() {
-        frame.setLayout(new GridLayout(2, 1));
-        topPanel.setLayout(new GridLayout(2, 2));
-        botPanel.setLayout(new FlowLayout());
-        addTop();
-        addBot();
-        frame.add(topPanel);
-        frame.add(botPanel);
-        frame.setSize(300, 200);
+        frame = new JFrame("Build...");
+        top = new JPanel();
+        bot = new JPanel();
+        frame.setLayout(null);
+        top.setBounds(0, 0, 410, 50);
+        top.setBackground(Color.BLUE);
+        bot.setBounds(0, 50, 410, 300);
+        bot.setBackground(Color.orange);
+        topPanel();
+        botPanel();
+        frame.addKeyListener(this);
+        frame.add(top, BorderLayout.NORTH);
+        frame.add(bot, BorderLayout.SOUTH);
+        frame.setSize(410, 50+(75 * 3));
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        
+        frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
     }
     public synchronized void run() {
         tete = true;
@@ -39,17 +48,27 @@ public class Build implements Runnable{
     public boolean getState() {
         return state;
     }
-    public void addTop() {
-        topPanel.add(new JLabel(" Balance"));
-        JTextField text = new JTextField("6000");
-        text.setEditable(false);
-        topPanel.add(text);
-        topPanel.add(new JLabel(" Amount"));
-        topPanel.add(new JTextField());
+    public void topPanel() {
     }
-    public void addBot() {
-        botPanel.add(new JButton("Deposit"));
-        botPanel.add(new JButton("Withdraw"));
-        botPanel.add(new JButton("Exit"));
+    public void botPanel() {
+//        bot.setLayout(new GridLayout(2, 5));
+        for(int i=0; i < 30; i++) {
+            test = new JLabel("; ");
+            test.setFont(new Font("Serif", Font.ITALIC, 45));
+            bot.add(test);
+        }
+        System.out.println(bot.getLayout());
     }
+    public static void main(String[] args) {
+        new Build();
+    }
+    public void keyTyped(KeyEvent ke) {}
+    public void keyPressed(KeyEvent ke) {
+        if(Character.isDefined(ke.getKeyChar()) && ke.getKeyChar() != KeyEvent.VK_ESCAPE && ke.getKeyChar() != KeyEvent.VK_BACK_SPACE) {
+            System.out.println(ke.getKeyChar());
+            test.setText(ke.getKeyChar()+"");
+            test.setForeground(Color.getHSBColor((float)Math.random(), (float)Math.random(), (float)Math.random()));
+        }
+    }
+    public void keyReleased(KeyEvent ke) {}
 }

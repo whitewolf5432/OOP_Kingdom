@@ -1,20 +1,27 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-public class FarmShop extends JPanel implements ActionListener{
+public class FarmShop extends JPanel implements ActionListener, Runnable{
     private Farm farm;
     private JButton bt;
+    private JLabel lb,lb2;
+    private Player py;
     private Image img = new ImageIcon("D:\\oop\\OOP_Kingdom\\Kingdom game\\src\\test3.png").getImage();
     private Image img2 = new ImageIcon("D:\\oop\\OOP_Kingdom\\Kingdom game\\src\\test4.png").getImage();
     public FarmShop() {
-        this.setBounds(0, 514,256, 198);
+        this.setBounds(256, 514,256, 198);
     }
-    public FarmShop(Farm fm) {
-        bt  = new JButton("Update");
-        this.setBounds(0, 514,256, 198);
+    public FarmShop(Farm fm, Player py) {
+        bt  = new JButton("Farm");
+        lb = new JLabel("0");
+        lb2 = new JLabel("10");
+        this.setBounds(256, 514,256, 198);
         this.farm = fm;
+        this.py = py;
         bt.addActionListener(this);
+        this.add(lb2);
         this.add(bt);
+        this.add(lb);
     }
     public void paintComponent(Graphics g) {
         switch (farm.getLevel()) {
@@ -54,10 +61,22 @@ public class FarmShop extends JPanel implements ActionListener{
         }
     }
     public void actionPerformed(ActionEvent e){  
-         farm.setLevel();
-         this.repaint();
+        new Thread(this).start();
     }  
-
+    public void run(){
+        if(py.payMoney(farm.getCost())){
+            //play
+            farm.upLevel();
+            lb.setText(farm.getLevel()+"");
+            lb2.setText(farm.getCost()+"");
+            this.repaint();
+            System.out.println("success");
+        }
+        else{
+            System.out.println("fail");
+        }
+        
+    }
    
  
     

@@ -31,25 +31,27 @@ public class FarmShop extends JPanel implements ActionListener, Runnable{
         new Thread(this).start();
     }
     public synchronized void run(){
-        if(player.payMoney(farm.getCost())){
-            boolean success = false;
-            try {
-                synchronized(this) {
-                    build = new Build();
-                    new Thread(build).start();
-                    Play.state = false;
-                    while(build.frame.isVisible()) {
-                        Thread.sleep(300);
-                        success = build.getState();
+        if(Play.state){
+            if(player.payMoney(farm.getCost())){
+                boolean success = false;
+                try {
+                    synchronized(this) {
+                        build = new Build();
+                        new Thread(build).start();
+                        Play.state = false;
+                        while(build.frame.isVisible()) {
+                            Thread.sleep(300);
+                            success = build.getState();
+                        }
+                        if(success) {
+                            farm.upLevel();
+                        }
+                        Play.state = true;
+                        build.running = false;
                     }
-                    if(success) {
-                        farm.upLevel();
-                    }
-                    Play.state = true;
-                    build.running = false;
+                } catch(InterruptedException ex) {
+                    System.out.println(ex);
                 }
-            } catch(InterruptedException ex) {
-                System.out.println(ex);
             }
             this.repaint();
         }

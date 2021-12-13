@@ -31,25 +31,27 @@ public class TownShop extends JPanel implements ActionListener, Runnable{
         new Thread(this).start();
     }
     public synchronized void run(){
-        if(player.payMoney(town.getCost())){
-            boolean success = false;
-            try {
-                synchronized(this) {
-                    build = new Build();
-                    new Thread(build).start();
-                    Play.state = false;
-                    while(build.frame.isVisible()) {
-                        Thread.sleep(300);
-                        success = build.getState();
+        if(Play.state){
+            if(player.payMoney(town.getCost())){
+                boolean success = false;
+                try {
+                    synchronized(this) {
+                        build = new Build();
+                        new Thread(build).start();
+                        Play.state = false;
+                        while(build.frame.isVisible()) {
+                            Thread.sleep(300);
+                            success = build.getState();
+                        }
+                        if(success) {
+                            town.upLevel();
+                        }
+                        Play.state = true;
+                        build.running = false;
                     }
-                    if(success) {
-                        town.upLevel();
-                    }
-                    Play.state = true;
-                    build.running = false;
+                } catch(InterruptedException ex) {
+                    System.out.println(ex);
                 }
-            } catch(InterruptedException ex) {
-                System.out.println(ex);
             }
             this.repaint();
         }

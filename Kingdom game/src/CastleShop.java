@@ -32,29 +32,31 @@ public class CastleShop extends JPanel implements ActionListener, Runnable{
         new Thread(this).start();
     }
     public synchronized void run(){
-        if(player.payMoney(castle.getCost())){
-            boolean success = false;
-            try {
-                if(castle.getLevel() != 0){
-                    synchronized(this) {
-                        build = new Build();
-                        new Thread(build).start();
-                        Play.state = false;
-                        while(build.frame.isVisible()) {
-                            Thread.sleep(300);
-                            success = build.getState();
+        if(Play.state){
+            if(player.payMoney(castle.getCost())){
+                boolean success = false;
+                try {
+                    if(castle.getLevel() != 0){
+                        synchronized(this) {
+                            build = new Build();
+                            new Thread(build).start();
+                            Play.state = false;
+                            while(build.frame.isVisible()) {
+                                Thread.sleep(300);
+                                success = build.getState();
+                            }
+                            if(success) {
+                                castle.upLevel();
+                            }
+                            Play.state = true;
+                            build.running = false;
                         }
-                        if(success) {
-                            castle.upLevel();
-                        }
-                        Play.state = true;
-                        build.running = false;
+                    } else {
+                        castle.upLevel();
                     }
-                } else {
-                    castle.upLevel();
+                } catch(InterruptedException ex) {
+                    System.out.println(ex);
                 }
-            } catch(InterruptedException ex) {
-                System.out.println(ex);
             }
             this.repaint();
         }

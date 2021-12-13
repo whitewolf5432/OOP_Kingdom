@@ -28,6 +28,7 @@ public class Build implements Runnable, KeyListener{
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
+        frame.setLocationRelativeTo(null);
     }
     public synchronized void run() {
         running = true;
@@ -36,7 +37,7 @@ public class Build implements Runnable, KeyListener{
             while(running) {
                 Thread.sleep(500);
                 System.out.println("x ->> " + x);
-                if(x++ == 20) {
+                if(x++ == 1) {
                     state = true;
                 }
             }

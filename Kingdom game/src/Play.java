@@ -8,15 +8,15 @@ public class Play extends JPanel implements Runnable{
     private Farm farm;
     private Thread thread;
     public static boolean state = true;
-    FarmShop farmShop;
-    TownShop townShop;
+    static FarmShop farmShop;
+    static TownShop townShop;
     Town town;
     Castle castle;
-    CastleShop castleShop;
+    static CastleShop castleShop;
     Market market;
-    MarketShop marketShop;
+    static MarketShop marketShop;
     Military military;
-    MilitaryShop militaryShop;
+    static MilitaryShop militaryShop;
     
     public Play() {
         frame = new JFrame();
@@ -32,7 +32,7 @@ public class Play extends JPanel implements Runnable{
         military = new Military();
         militaryShop = new MilitaryShop(military, player);
         this.setLayout(new BorderLayout());
-        this.setSize(1300, 760);
+        this.setSize(1295, 751);
         this.add(farm);
         this.add(farmShop);
         this.add(market);
@@ -45,14 +45,14 @@ public class Play extends JPanel implements Runnable{
         this.add(castleShop);
         this.add(new JLabel());
         frame.add(this);
-        frame.setSize(1300, 760);
+        frame.setSize(1295, 751);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         System.out.println(farm.getLevel());
         thread = new Thread(this);
         thread.start();
+        frame.setLocationRelativeTo(null);
     }
-    
     public static void main(String[] args) {
         new Play();
     }

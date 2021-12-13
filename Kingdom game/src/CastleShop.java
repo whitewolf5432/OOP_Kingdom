@@ -38,7 +38,7 @@ public class CastleShop extends JPanel implements ActionListener, Runnable{
                 try {
                     if(castle.getLevel() != 0){
                         synchronized(this) {
-                            build = new Build();
+                            build = new Build(castle.getWord(), castle.getTime());
                             new Thread(build).start();
                             Play.state = false;
                             while(build.frame.isVisible()) {

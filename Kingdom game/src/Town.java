@@ -7,7 +7,6 @@ public class Town extends JPanel implements PlaceInterface{
     private long cost;
     private int time;
     private int[] word;
-    private Image town;
     
     public Town() {
         this.cost = 20;
@@ -18,45 +17,7 @@ public class Town extends JPanel implements PlaceInterface{
         
     }
     public void paintComponent(Graphics g) {
-        town = new ImageIcon("Image/Place/town_"+this.level+".png").getImage();
-        switch (this.level) {
-            case 0:
-                g.drawImage(town, 0, 0, null);
-                break;
-            case 1:
-                g.drawImage(town, 0, 0, null);
-                break;
-            case 2:
-                g.drawImage(town, 0, 0, null);
-                break;
-            case 3:
-                g.drawImage(town, 0, 0, null);
-                break;
-            case 4:
-                g.drawImage(town, 0, 0, null);
-                break;
-            case 5:
-                g.drawImage(town, 0, 0, null);
-                break;
-            case 6:
-                g.drawImage(town, 0, 0, null);
-                break;
-            case 7:
-                g.drawImage(town, 0, 0, null);
-                break;
-            case 8:
-                g.drawImage(town, 0, 0, null);
-                break;
-            case 9:
-                g.drawImage(town, 0, 0, null);
-                break;
-            case 10:
-                g.drawImage(town, 0, 0, null);
-                break;
-            default:
-                g.drawImage(town, 0, 0, null);
-                break;
-        }
+        g.drawImage(new ImageIcon("Image/Place/town_"+this.level+".png").getImage(), 0, 0, null);
     }
 
     public void setLevel() {
@@ -145,9 +106,10 @@ public class Town extends JPanel implements PlaceInterface{
         return word;
     }
 
-    public Image getTown() {
-        return town;
+    public int getTime() {
+        return time;
     }
+
 
  
     

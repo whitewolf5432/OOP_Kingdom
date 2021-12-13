@@ -2,7 +2,7 @@ import java.awt.*;
 import javax.swing.*;
 public class Build implements Runnable{
     private boolean state;
-    public boolean tete;
+    public boolean running;
     public JFrame frame = new JFrame("Teller GUI");
     private JPanel topPanel = new JPanel();
     private JPanel botPanel = new JPanel();
@@ -21,10 +21,10 @@ public class Build implements Runnable{
         
     }
     public synchronized void run() {
-        tete = true;
+        running = true;
         int x = 0;
         try {
-            while(tete) {
+            while(running) {
                 Thread.sleep(500);
                 System.out.println("x ->> " + x);
                 if(x++ == 20) {

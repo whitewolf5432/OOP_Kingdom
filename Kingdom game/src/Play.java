@@ -32,7 +32,7 @@ public class Play extends JPanel implements Runnable{
         military = new Military();
         militaryShop = new MilitaryShop(military, player);
         this.setLayout(new BorderLayout());
-        this.setSize(1280, 720);
+        this.setSize(1300, 760);
         this.add(farm);
         this.add(farmShop);
         this.add(market);
@@ -45,7 +45,7 @@ public class Play extends JPanel implements Runnable{
         this.add(castleShop);
         this.add(new JLabel());
         frame.add(this);
-        frame.setSize(1280, 720);
+        frame.setSize(1300, 760);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         System.out.println(farm.getLevel());

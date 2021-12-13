@@ -7,7 +7,6 @@ public class Military extends JPanel implements PlaceInterface{
     private long cost;
     private int time;
     private int[] word;
-    private Image military;
     
     public Military() {
         this.cost = 40;
@@ -18,45 +17,7 @@ public class Military extends JPanel implements PlaceInterface{
         
     }
     public void paintComponent(Graphics g) {
-        military = new ImageIcon("Image/Place/military_"+this.level+".png").getImage();
-        switch (this.level) {
-            case 0:
-                g.drawImage(military, 0, 0, null);
-                break;
-            case 1:
-                g.drawImage(military, 0, 0, null);
-                break;
-            case 2:
-                g.drawImage(military, 0, 0, null);
-                break;
-            case 3:
-                g.drawImage(military, 0, 0, null);
-                break;
-            case 4:
-                g.drawImage(military, 0, 0, null);
-                break;
-            case 5:
-                g.drawImage(military, 0, 0, null);
-                break;
-            case 6:
-                g.drawImage(military, 0, 0, null);
-                break;
-            case 7:
-                g.drawImage(military, 0, 0, null);
-                break;
-            case 8:
-                g.drawImage(military, 0, 0, null);
-                break;
-            case 9:
-                g.drawImage(military, 0, 0, null);
-                break;
-            case 10:
-                g.drawImage(military, 0, 0, null);
-                break;
-            default:
-                g.drawImage(military, 0, 0, null);
-                break;
-        }
+        g.drawImage(new ImageIcon("Image/Place/military_"+this.level+".png").getImage(), 0, 0, null);
     }
 
     public void setLevel() {

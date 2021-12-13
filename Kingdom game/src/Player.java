@@ -1,3 +1,6 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 public class Player {
     private long money = 5;
     private int progress;

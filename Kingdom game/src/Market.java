@@ -7,7 +7,6 @@ public class Market extends JPanel implements PlaceInterface{
     private long cost;
     private int time;
     private int[] word;
-    private Image market;
     
     public Market() {
         this.cost = 150;
@@ -18,45 +17,7 @@ public class Market extends JPanel implements PlaceInterface{
         
     }
     public void paintComponent(Graphics g) {
-        market = new ImageIcon("Image/Place/market_"+this.level+".png").getImage();
-        switch (this.level) {
-            case 0:
-                g.drawImage(market, 0, 0, null);
-                break;
-            case 1:
-                g.drawImage(market, 0, 0, null);
-                break;
-            case 2:
-                g.drawImage(market, 0, 0, null);
-                break;
-            case 3:
-                g.drawImage(market, 0, 0, null);
-                break;
-            case 4:
-                g.drawImage(market, 0, 0, null);
-                break;
-            case 5:
-                g.drawImage(market, 0, 0, null);
-                break;
-            case 6:
-                g.drawImage(market, 0, 0, null);
-                break;
-            case 7:
-                g.drawImage(market, 0, 0, null);
-                break;
-            case 8:
-                g.drawImage(market, 0, 0, null);
-                break;
-            case 9:
-                g.drawImage(market, 0, 0, null);
-                break;
-            case 10:
-                g.drawImage(market, 0, 0, null);
-                break;
-            default:
-                g.drawImage(market, 0, 0, null);
-                break;
-        }
+        g.drawImage(new ImageIcon("Image/Place/market_"+this.level+".png").getImage(), 0, 0, null);
     }
 
     public void setLevel() {

@@ -31,8 +31,8 @@ public class Build implements Runnable, KeyListener{
         frame.setLayout(null);
         top.setBounds(0, 0, 410, 75);
         top.setBackground(Color.BLUE);
-        bot.setBounds(0, 75, 410, 300);
-        bot.setBackground(Color.orange);
+        bot.setBounds(0, 75, 410, 500);
+        bot.setBackground(new Color(0xc1ff80));
         topPanel();
         botPanel();
         frame.add(top, BorderLayout.NORTH);
@@ -41,7 +41,7 @@ public class Build implements Runnable, KeyListener{
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLocationRelativeTo(null);
-        frame.setResizable(false);
+//        frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.addKeyListener(this);
     }
@@ -59,6 +59,9 @@ public class Build implements Runnable, KeyListener{
     }
     public boolean getState() {
         return state;
+    }
+    public static void main(String[] args) {
+        new Build(new int[] {1, 1, 1, 1}, 50);
     }
     public void topPanel() {
     }
@@ -83,7 +86,7 @@ public class Build implements Runnable, KeyListener{
             bot.add(labelChar);
             strMiniGame.add(labelChar);
         }
-        strMiniGame.get(index).setForeground(Color.GRAY);
+        strMiniGame.get(index).setForeground(new Color(0xadad85));
     }
     public void fail() {
         frame.removeKeyListener(this);
@@ -111,7 +114,7 @@ public class Build implements Runnable, KeyListener{
                 if(++index == strMiniGame.size()) {
                     done();
                 } else {
-                    strMiniGame.get(index).setForeground(Color.GRAY);
+                    strMiniGame.get(index).setForeground(new Color(0xadad85));
                 }
             } else {
                 strMiniGame.get(index).setForeground(Color.RED);

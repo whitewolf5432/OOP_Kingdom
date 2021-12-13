@@ -31,7 +31,7 @@ public class Play extends JPanel implements Runnable{
         marketShop = new MarketShop(market, player);
         military = new Military();
         militaryShop = new MilitaryShop(military, player);
-        menubar = new Menubar(player);
+        menubar = new Menubar(player, town, farm, castle, market, military);
         this.setLayout(null);
         this.setSize(1295, 750);
         this.add(menubar);

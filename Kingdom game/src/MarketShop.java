@@ -21,6 +21,8 @@ public class MarketShop extends JPanel implements ActionListener, Runnable{
         bt.setBackground(new Color(0x795548));
         bt.setForeground(new Color(0xead2ac));
         bt.setFont(font);
+        bt.setFocusPainted(false);
+        bt.setFocusable(false);
         bt.addActionListener(this);
         this.add(bt);
     }

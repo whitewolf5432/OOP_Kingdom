@@ -45,11 +45,11 @@ public class Build implements Runnable, KeyListener{
         botPanel();
         frame.add(top, BorderLayout.NORTH);
         frame.add(bot, BorderLayout.SOUTH);
-        frame.setSize(425, 90+(80 * (len / 10 + 1) - (len / 10 * 15)));
+        frame.setSize(415, 90+(80 * (len / 10 + 1) - (len / 10 * 15)));
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLocationRelativeTo(null);
-//        frame.setResizable(false);
+        frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.addKeyListener(this);
     }
@@ -60,7 +60,6 @@ public class Build implements Runnable, KeyListener{
                 Thread.sleep(1000);
                 timeText.setText("Time: "+time);
             }
-            System.out.println("testestsetsetests");
             frame.dispose();
         } catch(InterruptedException error) {
             System.out.println(error);
@@ -117,7 +116,6 @@ public class Build implements Runnable, KeyListener{
     public void keyTyped(KeyEvent ke) {}
     public synchronized void keyPressed(KeyEvent ke) {
         if(Character.isDefined(ke.getKeyChar()) && ke.getKeyChar() != KeyEvent.VK_ESCAPE && ke.getKeyChar() != KeyEvent.VK_BACK_SPACE && ke.getKeyChar() != KeyEvent.VK_SPACE) {
-            System.out.println(ke.getKeyChar());
             if(strMiniGame.get(index).getText().charAt(0) == ke.getKeyChar()) {
                 strMiniGame.get(index).setForeground(Color.GREEN);
                 if(++index == strMiniGame.size()) {

@@ -21,7 +21,7 @@ public class Build implements Runnable, KeyListener{
         frame = new JFrame("Build...");
         top = new JPanel();
         bot = new JPanel();
-        font = new Font("Monospaced", Font.ITALIC, 52);
+        font = new Font("Monospaced", Font.ITALIC, 45);
         lowerCase = "abcdefghijklmnopqrstuvwxyz";
         upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         number = "0123456789";
@@ -29,15 +29,15 @@ public class Build implements Runnable, KeyListener{
         storeWord = "";
         strMiniGame = new ArrayList();
         frame.setLayout(null);
-        top.setBounds(0, 0, 410, 75);
+        top.setBounds(0, 0, 500, 75);
         top.setBackground(Color.BLUE);
-        bot.setBounds(0, 75, 410, 300);
+        bot.setBounds(0, 75, 500, 300);
         bot.setBackground(Color.orange);
         topPanel();
         botPanel();
         frame.add(top, BorderLayout.NORTH);
         frame.add(bot, BorderLayout.SOUTH);
-        frame.setSize(410, 75+(75 * 3));
+        frame.setSize(500, 75+(75 * 3));
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLocationRelativeTo(null);

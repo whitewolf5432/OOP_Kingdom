@@ -36,7 +36,7 @@ public class TownShop extends JPanel implements ActionListener, Runnable{
                 boolean success = false;
                 try {
                     synchronized(this) {
-                        build = new Build();
+                        build = new Build(town.getWord(), town.getTime());
                         new Thread(build).start();
                         Play.state = false;
                         while(build.frame.isVisible()) {

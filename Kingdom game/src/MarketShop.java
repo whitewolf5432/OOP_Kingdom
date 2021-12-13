@@ -36,7 +36,7 @@ public class MarketShop extends JPanel implements ActionListener, Runnable{
                 boolean success = false;
                 try {
                     synchronized(this) {
-                        build = new Build();
+                        build = new Build(market.getWord(), market.getTime());
                         new Thread(build).start();
                         Play.state = false;
                         while(build.frame.isVisible()) {

@@ -63,16 +63,16 @@ public class Build implements Runnable, KeyListener{
     public void topPanel() {
     }
     public void botPanel() {
-        for(int i=0; i < 1; i++) {
+        for(int i=0; i < word[0]; i++) {
             storeWord += lowerCase.charAt((int)(Math.random() * (lowerCase.length()-1)));
         }
-        for(int i=0; i < 1; i++) {
+        for(int i=0; i < word[1]; i++) {
             storeWord += upperCase.charAt((int)(Math.random() * (upperCase.length()-1)));
         }
-        for(int i=0; i < 1; i++) {
+        for(int i=0; i < word[2]; i++) {
             storeWord += number.charAt((int)(Math.random() * (number.length()-1)));
         }
-        for(int i=0; i < 1; i++) {
+        for(int i=0; i < word[3]; i++) {
             storeWord += symbol.charAt((int)(Math.random() * (symbol.length()-1)));
         }
         List<String> letters = Arrays.asList(storeWord.split(""));

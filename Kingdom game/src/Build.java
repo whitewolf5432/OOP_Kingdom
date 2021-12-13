@@ -35,8 +35,8 @@ public class Build implements Runnable, KeyListener{
         topLabel = new JLabel(new ImageIcon("Image/Build/readme.png"));
         topLabel.setSize(410, 75);
         timeText = new JLabel("Time: "+time);
-        timeText.setFont(new Font("Monospaced", Font.ITALIC, 16));
-        timeText.setBounds(315, -3, 150, 35);
+        timeText.setFont(new Font("Helvetica", Font.LAYOUT_RIGHT_TO_LEFT, 15));
+        timeText.setBounds(333, -3, 150, 35);
         top.add(timeText);
         top.add(topLabel);
         bot.setBounds(0, 75, 410, 1000);
@@ -70,7 +70,7 @@ public class Build implements Runnable, KeyListener{
         return state;
     }
     public static void main(String[] args) {
-        new Build(new int[] {0, 0, 0, 8}, 50);
+        new Build(new int[] {0, 0, 0, 8}, 5);
     }
     public void topPanel() {
     }

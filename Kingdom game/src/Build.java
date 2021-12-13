@@ -9,19 +9,20 @@ public class Build implements Runnable, KeyListener{
     public boolean running;
     public JFrame frame;
     private JPanel top, bot;
-    private JLabel labelChar;
+    private JLabel labelChar, topLabel, timeText;
     private String lowerCase, upperCase, number, symbol, storeWord;
-    private int index, word[], time;
+    private int index, word[], time, len;
     private Font font;
     private ArrayList<JLabel> strMiniGame;
     
     public Build(int[] word, int time) {
         this.word = word;
         this.time = time;
+        len = word[0] + word[1] + word[2] + word[3];
         frame = new JFrame("Build...");
         top = new JPanel();
         bot = new JPanel();
-        font = new Font("Monospaced", Font.ITALIC, 45);
+        font = new Font("Monospaced", Font.PLAIN, 34);
         lowerCase = "abcdefghijklmnopqrstuvwxyz";
         upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         number = "0123456789";
@@ -29,15 +30,22 @@ public class Build implements Runnable, KeyListener{
         storeWord = "";
         strMiniGame = new ArrayList();
         frame.setLayout(null);
-        top.setBounds(0, 0, 500, 75);
-        top.setBackground(Color.BLUE);
-        bot.setBounds(0, 75, 500, 300);
+        top.setBounds(0, 0, 410, 75);
+        top.setLayout(null);
+        topLabel = new JLabel(new ImageIcon("Image/Build/readme.png"));
+        topLabel.setSize(410, 75);
+        timeText = new JLabel("Time: "+time);
+        timeText.setFont(new Font("Monospaced", Font.ITALIC, 16));
+        timeText.setBounds(315, -3, 150, 35);
+        top.add(timeText);
+        top.add(topLabel);
+        bot.setBounds(0, 75, 410, 1000);
         bot.setBackground(Color.orange);
         topPanel();
         botPanel();
         frame.add(top, BorderLayout.NORTH);
         frame.add(bot, BorderLayout.SOUTH);
-        frame.setSize(500, 75+(75 * 3));
+        frame.setSize(425, 90+(80 * (len / 10 + 1) - (len / 10 * 15)));
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLocationRelativeTo(null);
@@ -50,6 +58,7 @@ public class Build implements Runnable, KeyListener{
         try {
             while(time-- != 0) {
                 Thread.sleep(1000);
+                timeText.setText("Time: "+time);
             }
             System.out.println("testestsetsetests");
             frame.dispose();
@@ -61,7 +70,7 @@ public class Build implements Runnable, KeyListener{
         return state;
     }
     public static void main(String[] args) {
-        new Build(new int[] {1, 1, 1, 1}, 50);
+        new Build(new int[] {0, 0, 0, 8}, 50);
     }
     public void topPanel() {
     }

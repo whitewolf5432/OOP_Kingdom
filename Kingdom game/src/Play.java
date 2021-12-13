@@ -34,6 +34,7 @@ public class Play extends JPanel implements Runnable{
         menubar = new Menubar(player);
         this.setLayout(null);
         this.setSize(1295, 750);
+        this.add(menubar);
         this.add(farm);
         this.add(farmShop);
         this.add(market);
@@ -44,7 +45,6 @@ public class Play extends JPanel implements Runnable{
         this.add(townShop);
         this.add(castle);
         this.add(castleShop);
-        this.add(menubar);
         frame.add(this);
         frame.setSize(1295, 750);
         frame.setVisible(true);

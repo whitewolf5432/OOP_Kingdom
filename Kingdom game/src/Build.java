@@ -11,16 +11,17 @@ public class Build implements Runnable, KeyListener{
     private JPanel top, bot;
     private JLabel labelChar;
     private String lowerCase, upperCase, number, symbol, storeWord;
-    private int xxx;
-    private char rChar;
+    private int index, word[], time;
     private Font font;
     private ArrayList<JLabel> strMiniGame;
     
-    public Build() {
+    public Build(int[] word, int time) {
+        this.word = word;
+        this.time = time;
         frame = new JFrame("Build...");
         top = new JPanel();
         bot = new JPanel();
-        font = new Font("Serif", Font.ITALIC, 45);
+        font = new Font("Monospaced", Font.ITALIC, 52);
         lowerCase = "abcdefghijklmnopqrstuvwxyz";
         upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         number = "0123456789";
@@ -28,36 +29,32 @@ public class Build implements Runnable, KeyListener{
         storeWord = "";
         strMiniGame = new ArrayList();
         frame.setLayout(null);
-        top.setBounds(0, 0, 410, 50);
+        top.setBounds(0, 0, 410, 75);
         top.setBackground(Color.BLUE);
-        bot.setBounds(0, 50, 410, 300);
+        bot.setBounds(0, 75, 410, 300);
         bot.setBackground(Color.orange);
         topPanel();
         botPanel();
-        frame.addKeyListener(this);
         frame.add(top, BorderLayout.NORTH);
         frame.add(bot, BorderLayout.SOUTH);
-        frame.setSize(410, 50+(75 * 3));
+        frame.setSize(410, 75+(75 * 3));
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
+        frame.addKeyListener(this);
     }
-    public synchronized void run() {
+    public void run() {
         running = true;
-        int x = 0;
         try {
-            while(running) {
-                Thread.sleep(500);
-                System.out.println("x ->> " + x);
-                if(x++ == 1) {
-                    state = true;
-                }
+            while(time-- != 0) {
+                Thread.sleep(1000);
             }
-            System.out.println(x);
-        } catch(InterruptedException tttt) {
-            System.out.println("x");
+            System.out.println("testestsetsetests");
+            frame.dispose();
+        } catch(InterruptedException error) {
+            System.out.println(error);
         }
     }
     public boolean getState() {
@@ -66,16 +63,16 @@ public class Build implements Runnable, KeyListener{
     public void topPanel() {
     }
     public void botPanel() {
-        for(int i=0; i < 10; i++) {
+        for(int i=0; i < 1; i++) {
             storeWord += lowerCase.charAt((int)(Math.random() * (lowerCase.length()-1)));
         }
-        for(int i=0; i < 10; i++) {
+        for(int i=0; i < 1; i++) {
             storeWord += upperCase.charAt((int)(Math.random() * (upperCase.length()-1)));
         }
-        for(int i=0; i < 10; i++) {
+        for(int i=0; i < 1; i++) {
             storeWord += number.charAt((int)(Math.random() * (number.length()-1)));
         }
-        for(int i=0; i < 10; i++) {
+        for(int i=0; i < 1; i++) {
             storeWord += symbol.charAt((int)(Math.random() * (symbol.length()-1)));
         }
         List<String> letters = Arrays.asList(storeWord.split(""));
@@ -86,28 +83,40 @@ public class Build implements Runnable, KeyListener{
             bot.add(labelChar);
             strMiniGame.add(labelChar);
         }
-        strMiniGame.get(xxx).setForeground(Color.GRAY);
+        strMiniGame.get(index).setForeground(Color.GRAY);
     }
     public void fail() {
-        
+        frame.removeKeyListener(this);
+        close();
     }
-    public void done() {
+    public synchronized void done() {
         state = true;
+        frame.removeKeyListener(this);
+        close();
     }
-    public static void main(String[] args) {
-        new Build();
+    public void close() {
+        try {
+            Thread.sleep(750);
+        } catch(InterruptedException error) {
+            System.out.println(error);
+        }
+        frame.dispose();
     }
     public void keyTyped(KeyEvent ke) {}
-    public void keyPressed(KeyEvent ke) {
+    public synchronized void keyPressed(KeyEvent ke) {
         if(Character.isDefined(ke.getKeyChar()) && ke.getKeyChar() != KeyEvent.VK_ESCAPE && ke.getKeyChar() != KeyEvent.VK_BACK_SPACE && ke.getKeyChar() != KeyEvent.VK_SPACE) {
             System.out.println(ke.getKeyChar());
-            if(strMiniGame.get(xxx).getText().charAt(0) == ke.getKeyChar()) {
-                strMiniGame.get(xxx).setForeground(Color.GREEN);
+            if(strMiniGame.get(index).getText().charAt(0) == ke.getKeyChar()) {
+                strMiniGame.get(index).setForeground(Color.GREEN);
+                if(++index == strMiniGame.size()) {
+                    done();
+                } else {
+                    strMiniGame.get(index).setForeground(Color.GRAY);
+                }
             } else {
-                strMiniGame.get(xxx).setForeground(Color.RED);
+                strMiniGame.get(index).setForeground(Color.RED);
                 fail();
             }
-            strMiniGame.get(++xxx).setForeground(Color.GRAY);
         }
     }
     public void keyReleased(KeyEvent ke) {}

@@ -30,6 +30,7 @@ public class Menu extends javax.swing.JPanel {
         jButton1.setContentAreaFilled(false);
         jButton1.setFocusPainted(false);
         jButton1.setFocusable(false);
+        jButton1.setFont(new java.awt.Font("Century", 0, 15));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -42,6 +43,7 @@ public class Menu extends javax.swing.JPanel {
         jButton2.setContentAreaFilled(false);
         jButton2.setFocusPainted(false);
         jButton2.setFocusable(false);
+        jButton2.setFont(new java.awt.Font("Century", 0, 15));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -54,6 +56,7 @@ public class Menu extends javax.swing.JPanel {
         jButton3.setContentAreaFilled(false);
         jButton3.setFocusPainted(false);
         jButton3.setFocusable(false);
+        jButton3.setFont(new java.awt.Font("Century", 0, 15));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -66,6 +69,7 @@ public class Menu extends javax.swing.JPanel {
         jButton4.setContentAreaFilled(false);
         jButton4.setFocusPainted(false);
         jButton4.setFocusable(false);
+        jButton4.setFont(new java.awt.Font("Century", 0, 15));
         add(jButton4);
         jButton4.setBounds(490, 540, 250, 100);
         

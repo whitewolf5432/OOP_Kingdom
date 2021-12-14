@@ -43,7 +43,7 @@ public class Tips extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1280, 800));
         setLayout(null);
 
-        jButton1.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Century", 0, 18)); // NOI18N
         jButton1.setText("BACK");
         jButton1.setContentAreaFilled(false);
         jButton1.setFocusPainted(false);

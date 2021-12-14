@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 public class Player {
-    private long money = 5;
+    private long money = 999999999999999999l;
     private int progress;
     public void collectMoney(int m, boolean state){
         if(state) {

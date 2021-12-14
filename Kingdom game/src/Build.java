@@ -18,7 +18,7 @@ public class Build implements Runnable, KeyListener{
     public Build(int[] word, int time) {
         this.word = word;
         this.time = time;
-        len = word[0] + word[1] + word[2] + word[3];
+        len = word[0] + word[1] + word[2] + word[3] - 1;
         frame = new JFrame("Build...");
         top = new JPanel();
         bot = new JPanel();
@@ -44,7 +44,7 @@ public class Build implements Runnable, KeyListener{
         botPanel();
         frame.add(top, BorderLayout.NORTH);
         frame.add(bot, BorderLayout.SOUTH);
-        frame.setSize(415, 100+(70 * (len / 10 + 1) - (len / 10 * 10)));
+        frame.setSize(415, 95+(70 * (len / 9 + 1) - (len / 9 * 15)));
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLocationRelativeTo(null);

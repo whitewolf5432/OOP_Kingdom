@@ -1,6 +1,6 @@
 public class Player {
     private long money = 999999999999999999l;
-    private int progress;
+
     public void collectMoney(int m, boolean state){
         if(state) {
             this.money += m;
@@ -15,8 +15,5 @@ public class Player {
     }
     public long getMoney() {
         return money;
-    }
-    public int getProgress() {
-        return progress;
     }
 }

@@ -8,16 +8,18 @@ public class Game extends JFrame{
     private static Credit credit;
     private static Menu menu;
     private static Tips tip;
+    private static Ending end;
 
     public Game() {
-       frame = new JFrame();
+       frame = new JFrame("O(op) Kingdom");
        play = new Play();
        home = new Home();
        credit = new Credit();
        menu = new Menu();
        tip = new Tips();
+       end = new Ending();
        frame.setLayout(new BorderLayout());
-       frame.add(home);
+       frame.add(end);
        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
        frame.setResizable(false);
        frame.setSize(1280, 740);
@@ -50,7 +52,7 @@ public class Game extends JFrame{
                 frame.setContentPane(menu);
                 break;
             case "Ending":
-                frame.setContentPane(menu);
+                frame.setContentPane(end);
                 break;
             default:
                 break;

@@ -26,12 +26,12 @@ public class Home extends javax.swing.JPanel {
         setLayout(null);
 
         Startbut.setBackground(new java.awt.Color(255, 255, 255));
-        Startbut.setFont(new java.awt.Font("Arial Black", 0, 30)); // NOI18N
+        Startbut.setFont(new java.awt.Font("Century", 0, 30));
         Startbut.setForeground(new java.awt.Color(255, 255, 51));
         Startbut.setText("START");
         Startbut.setContentAreaFilled(false);
         Startbut.setFocusPainted(false);
-        Startbut.setName(""); // NOI18N
+        Startbut.setName("");
         Startbut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 StartbutActionPerformed(evt);
@@ -40,7 +40,7 @@ public class Home extends javax.swing.JPanel {
         add(Startbut);
         Startbut.setBounds(500, 140, 310, 90);
 
-        Howtoplaybut.setFont(new java.awt.Font("Arial Black", 0, 30)); // NOI18N
+        Howtoplaybut.setFont(new java.awt.Font("Century", 0, 30));
         Howtoplaybut.setForeground(new java.awt.Color(255, 255, 51));
         Howtoplaybut.setText("HOW TO PLAY");
         Howtoplaybut.setContentAreaFilled(false);
@@ -53,7 +53,7 @@ public class Home extends javax.swing.JPanel {
         add(Howtoplaybut);
         Howtoplaybut.setBounds(500, 250, 310, 90);
 
-        Teambut.setFont(new java.awt.Font("Arial Black", 0, 30)); // NOI18N
+        Teambut.setFont(new java.awt.Font("Century", 0, 30));
         Teambut.setForeground(new java.awt.Color(255, 255, 51));
         Teambut.setText("TEAM");
         Teambut.setContentAreaFilled(false);
@@ -66,7 +66,7 @@ public class Home extends javax.swing.JPanel {
         add(Teambut);
         Teambut.setBounds(500, 370, 310, 90);
 
-        Exitbut.setFont(new java.awt.Font("Arial Black", 0, 30)); // NOI18N
+        Exitbut.setFont(new java.awt.Font("Century", 0, 30));
         Exitbut.setForeground(new java.awt.Color(255, 102, 102));
         Exitbut.setText("EXIT");
         Exitbut.setContentAreaFilled(false);
@@ -111,7 +111,7 @@ public class Home extends javax.swing.JPanel {
         jLabel7.setIcon((Icon) bg);
         add(jLabel7);
         jLabel7.setBounds(0, 0, 1280, 800);
-    }// </editor-fold>                        
+    }                      
 
     private void TeambutActionPerformed(java.awt.event.ActionEvent evt) {                                        
         Game.change("Team");
@@ -130,8 +130,7 @@ public class Home extends javax.swing.JPanel {
         Game.change("How To Play");
     }                                            
 
-
-    // Variables declaration - do not modify                     
+                  
     private javax.swing.JButton Exitbut;
     private javax.swing.JButton Howtoplaybut;
     private javax.swing.JButton Startbut;
@@ -141,5 +140,5 @@ public class Home extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    // End of variables declaration           
+        
 }

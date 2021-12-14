@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+
 public class Menubar extends JPanel implements ActionListener{
     private Player player;
     private Farm farm;
@@ -9,6 +10,7 @@ public class Menubar extends JPanel implements ActionListener{
     private Market market;
     private Military military;
     private JButton home;
+    
     public Menubar(Player player, Town town, Farm farm, Castle castle, Market market, Military military){
         this.player = player;
         this.farm = farm;
@@ -44,10 +46,8 @@ public class Menubar extends JPanel implements ActionListener{
         g.drawString("Market", 631, 20);
         g.drawString("Military", 805, 20);
         g.drawString(player.getMoney()+"", 1025, 50);
-        
     }
     public void actionPerformed(ActionEvent ae) {
         Game.change("Menu");
     }
-    
 }

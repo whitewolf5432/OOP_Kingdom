@@ -1,12 +1,14 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+
 public class MilitaryShop extends JPanel implements ActionListener, Runnable{
     private Military military;
     private JButton upgrade;
     private Player player;
     private Build build;
     private Font font;
+    
     public MilitaryShop() {
         this.setBounds(1024, 514,256, 198);
     }

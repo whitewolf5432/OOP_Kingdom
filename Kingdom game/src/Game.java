@@ -23,7 +23,6 @@ public class Game extends JFrame{
        frame.setSize(1280, 740);
        frame.setLocationRelativeTo(null);       
        frame.setVisible(true);
-       
     }
     public static void HowToPlay(int n){
         tip.setN(n);
@@ -59,7 +58,6 @@ public class Game extends JFrame{
         frame.revalidate();
         frame.repaint();
     }
-    
     public static void main(String[] args) {
         new Game();
     }

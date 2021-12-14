@@ -16,6 +16,7 @@ public class Play extends JPanel implements Runnable{
     private Military military;
     private MilitaryShop militaryShop;
     private Menubar menubar;
+    
     public Play() {
         player = new Player();
         farm = new Farm();

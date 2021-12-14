@@ -1,12 +1,14 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+
 public class FarmShop extends JPanel implements ActionListener, Runnable{
     private Farm farm;
     private JButton upgrade;
     private Player player;
     private Build build;
     private Font font;
+    
     public FarmShop() {
         this.setBounds(256, 514,256, 198);
     }

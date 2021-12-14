@@ -1,12 +1,14 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+
 public class TownShop extends JPanel implements ActionListener, Runnable{
     private Town town;
     private JButton upgrade;
     private Player player;
     private Build build;
     private Font font;
+    
     public TownShop() {
         this.setBounds(0, 514,256, 198);
     }

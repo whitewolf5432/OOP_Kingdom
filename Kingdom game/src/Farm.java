@@ -1,6 +1,6 @@
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
+
 public class Farm extends JPanel implements PlaceInterface{
     private int level;
     private int value;
@@ -14,20 +14,13 @@ public class Farm extends JPanel implements PlaceInterface{
         word = new int[] {0, 0, 1, 0};
         this.setBounds(0, 256, 640, 256);
         this.setOpaque(false);
-        
     }
     public void paintComponent(Graphics g) {
         g.drawImage(new ImageIcon("Image/Place/farm_"+this.level+".png").getImage(), 0, 0, null);
     }
-
-    public void setLevel() {
-        
-    }
-
     public int getLevel() {
         return level;
     }
-
     public synchronized void upLevel() {
         switch (++this.level) {
             case 1:
@@ -93,23 +86,16 @@ public class Farm extends JPanel implements PlaceInterface{
         }
         this.repaint();
     }
-
     public int getValue() {
         return value;
     }
-
     public long getCost() {
         return cost;
     }
-
     public int getTime() {
         return time;
     }
-
     public int[] getWord() {
         return word;
     }
-    
- 
-    
 }

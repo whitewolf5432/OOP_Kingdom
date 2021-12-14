@@ -1,12 +1,14 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+
 public class MarketShop extends JPanel implements ActionListener, Runnable{
     private Market market;
     private JButton upgrade;
     private Player player;
     private Build build;
     private Font font;
+    
     public MarketShop() {
         this.setBounds(768, 514,256, 198);
     }

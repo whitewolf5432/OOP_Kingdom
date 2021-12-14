@@ -4,6 +4,7 @@ import java.awt.Font;
 import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
+
 public class Build implements Runnable, KeyListener{
     private boolean state;
     public boolean running;
@@ -107,7 +108,6 @@ public class Build implements Runnable, KeyListener{
         }
         frame.dispose();
     }
-    public void keyTyped(KeyEvent ke) {}
     public synchronized void keyPressed(KeyEvent ke) {
         if(Character.isDefined(ke.getKeyChar()) && ke.getKeyChar() != KeyEvent.VK_ESCAPE && ke.getKeyChar() != KeyEvent.VK_BACK_SPACE && ke.getKeyChar() != KeyEvent.VK_SPACE) {
             if(strMiniGame.get(index).getText().charAt(0) == ke.getKeyChar()) {
@@ -123,5 +123,6 @@ public class Build implements Runnable, KeyListener{
             }
         }
     }
+    public void keyTyped(KeyEvent ke) {}
     public void keyReleased(KeyEvent ke) {}
 }

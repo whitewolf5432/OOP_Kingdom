@@ -1,6 +1,6 @@
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
+
 public class Castle extends JPanel implements PlaceInterface{
     private int level;
     private int value;
@@ -16,7 +16,6 @@ public class Castle extends JPanel implements PlaceInterface{
     }
     public void paintComponent(Graphics g) {
         g.drawImage(new ImageIcon("Image/Place/castle_"+this.level+".png").getImage(), 0, 0, null);
-        //g.drawImage(new ImageIcon("Image/Place/castle_10.png").getImage(), 0, 0, null);
     }
     public int getLevel() {
         return level;
@@ -95,7 +94,6 @@ public class Castle extends JPanel implements PlaceInterface{
     public int getTime() {
         return time;
     }
-
     public int[] getWord() {
         return word;
     }

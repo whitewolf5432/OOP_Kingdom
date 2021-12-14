@@ -1,6 +1,3 @@
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
 public class Player {
     private long money = 999999999999999999l;
     private int progress;
@@ -16,16 +13,10 @@ public class Player {
         }
         return false;
     }
-
     public long getMoney() {
         return money;
     }
-
     public int getProgress() {
         return progress;
     }
-   
-    
-    
-    
 }

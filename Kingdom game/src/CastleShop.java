@@ -1,13 +1,14 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import java.io.*;
+
 public class CastleShop extends JPanel implements ActionListener, Runnable{
     private Castle castle;
     private JButton upgrade;
     private Player player;
     private Build build;
     private Font font;
+    
     public CastleShop() {
         this.setBounds(512, 514,256, 198);
     }

@@ -1,5 +1,5 @@
 public class Player {
-    private long money;
+    private long money = 5;
 
     public void collectMoney(int m, boolean state){
         if(state) {

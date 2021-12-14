@@ -95,7 +95,7 @@ public class Menu extends javax.swing.JPanel {
         jLabel1.setIcon((Icon) bg);
         add(jLabel1);
         jLabel1.setBounds(0, 0, 1280, 800);
-    }// </editor-fold>                        
+    }                 
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         Game.change("Play");

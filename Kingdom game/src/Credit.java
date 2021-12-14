@@ -19,7 +19,7 @@ public class Credit extends javax.swing.JPanel {
         jPanel9 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
+
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -104,21 +104,14 @@ public class Credit extends javax.swing.JPanel {
         jPanel6.add(jPanel11);
         jPanel11.setBounds(150, 290, 120, 120);
 
-        jButton2.setLabel("BACK");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(jButton2);
-        jButton2.setBounds(540, 550, 190, 60);
+
 
         setMaximumSize(new java.awt.Dimension(1280, 800));
         setMinimumSize(new java.awt.Dimension(1280, 800));
         setPreferredSize(new java.awt.Dimension(1280, 800));
         setLayout(null);
 
-        jButton1.setFont(new java.awt.Font("Century", 0, 30)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Century", 0, 30));
         jButton1.setContentAreaFilled(false);
         jButton1.setFocusPainted(false);
         jButton1.setLabel("BACK");
@@ -170,18 +163,16 @@ public class Credit extends javax.swing.JPanel {
         jLabel6.setIcon((Icon) bg);
         add(jLabel6);
         jLabel6.setBounds(0, 0, 1280, 800);
-    }// </editor-fold>                        
+    }                     
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
     Game.change("Home");
     }                                        
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
-    }                                        
+                                        
 
 
-    // Variables declaration - do not modify                     
+                    
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -197,7 +188,6 @@ public class Credit extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    // End of variables declaration                   
 
 
 }

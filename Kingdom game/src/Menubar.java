@@ -1,7 +1,6 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import java.io.*;
 public class Menubar extends JPanel implements ActionListener{
     private Player player;
     private Farm farm;
@@ -31,7 +30,6 @@ public class Menubar extends JPanel implements ActionListener{
         this.setOpaque(false);
     }
     public void paintComponent(Graphics g){
-        //g.drawImage(new ImageIcon("Image/Menubar/home.png").getImage(), 0, 10, null);
         g.drawImage(new ImageIcon("Image/Menubar/progressBar_"+town.getLevel()+".png").getImage(), 99, 25, null);
         g.drawImage(new ImageIcon("Image/Menubar/progressBar_"+farm.getLevel()+".png").getImage(), 273, 25, null);
         g.drawImage(new ImageIcon("Image/Menubar/progressBar_"+castle.getLevel()+".png").getImage(), 447, 25, null);
@@ -49,7 +47,7 @@ public class Menubar extends JPanel implements ActionListener{
         
     }
     public void actionPerformed(ActionEvent ae) {
-        
+        Game.change("Menu");
     }
     
 }

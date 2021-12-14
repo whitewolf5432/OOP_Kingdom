@@ -1,13 +1,11 @@
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 
 public class Play extends JPanel implements Runnable{
-    private JFrame frame;
     private Player player;
     private Farm farm;
     private Thread thread;
     public static boolean state = true;
+    private boolean pause;
     private FarmShop farmShop;
     private TownShop townShop;
     private Town town;
@@ -19,7 +17,6 @@ public class Play extends JPanel implements Runnable{
     private MilitaryShop militaryShop;
     private Menubar menubar;
     public Play() {
-        frame = new JFrame();
         player = new Player();
         farm = new Farm();
         farmShop = new FarmShop(farm, player);
@@ -45,20 +42,20 @@ public class Play extends JPanel implements Runnable{
         this.add(townShop);
         this.add(castle);
         this.add(castleShop);
-        frame.add(this);
-        frame.setSize(1295, 750);
-        frame.setVisible(true);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         System.out.println(farm.getLevel());
         thread = new Thread(this);
-        thread.start();
-        frame.setLocationRelativeTo(null);
+        
     }
-    public static void main(String[] args) {
-        new Play();
+    public void startPlay(){
+        thread.start();
+        pause = false;
+    }
+    public void pausePlay(){
+        thread = new Thread(this);
+        pause = true;
     }
     public synchronized void run(){
-        while(true){ 
+        while(!pause){ 
             menubar.repaint();
             player.collectMoney(farm.getValue()+town.getValue()+castle.getValue()+market.getValue()+military.getValue(), state);
             System.out.println(player.getMoney());
@@ -67,6 +64,10 @@ public class Play extends JPanel implements Runnable{
             }
             catch(InterruptedException e){
                 System.out.println(e);
+            }
+            if(farm.getLevel() == 10 && town.getLevel() == 10 && castle.getLevel() == 10 && market.getLevel() == 10 && military.getLevel() == 10) {
+                Game.change("Ending");
+                break;
             }
         }
     }

@@ -30,6 +30,11 @@ public class Menu extends javax.swing.JPanel {
         jButton1.setContentAreaFilled(false);
         jButton1.setFocusPainted(false);
         jButton1.setFocusable(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         add(jButton1);
         jButton1.setBounds(490, 180, 250, 100);
 
@@ -88,6 +93,10 @@ public class Menu extends javax.swing.JPanel {
         jLabel1.setBounds(0, 0, 1280, 800);
     }// </editor-fold>                        
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        Game.change("Play");
+    }
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         Game.change("Home");
     }                                        

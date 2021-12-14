@@ -79,7 +79,7 @@ public class Menu extends javax.swing.JPanel {
         jButton4.setBounds(490, 540, 250, 100);
         
         ImageIcon bt = new ImageIcon(new javax.swing.ImageIcon("Image/Game/Menubut.png").getImage());
-        ImageIcon bg = new ImageIcon(new javax.swing.ImageIcon("Image/Game/Overall0.png").getImage());
+        ImageIcon bg = new ImageIcon(new javax.swing.ImageIcon("Image/Game/7055306.png").getImage());
         
         jLabel5.setIcon((Icon) bt);
         add(jLabel5);

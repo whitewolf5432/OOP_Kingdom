@@ -25,7 +25,7 @@ public class Ending extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         
-        ImageIcon bg = new ImageIcon(new javax.swing.ImageIcon("Image/Game/1920x1080_px_A_Bastards_Tale_knight_Pixel_Art_video_games-1325043.jpeg").getImage());
+        ImageIcon bg = new ImageIcon(new javax.swing.ImageIcon("Image/Game/fantasy_castle_sketch_by_daveybaker_deep4p4-fullview.jpg").getImage());
         ImageIcon bt = new ImageIcon(new javax.swing.ImageIcon("Image/Game/butcredit.png").getImage());
         ImageIcon im = new ImageIcon(new javax.swing.ImageIcon("Image/Game/free-paper-texture-10.jpg").getImage());
         

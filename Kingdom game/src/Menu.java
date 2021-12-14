@@ -70,6 +70,11 @@ public class Menu extends javax.swing.JPanel {
         jButton4.setFocusPainted(false);
         jButton4.setFocusable(false);
         jButton4.setFont(new java.awt.Font("Century", 0, 15));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         add(jButton4);
         jButton4.setBounds(490, 540, 250, 100);
         
@@ -108,7 +113,10 @@ public class Menu extends javax.swing.JPanel {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         Game.HowToPlay(0);
         Game.change("How To Play");
-    }                                        
+    } 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        Game.change("Exit");
+    }
                 
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

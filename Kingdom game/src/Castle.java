@@ -12,7 +12,6 @@ public class Castle extends JPanel implements PlaceInterface{
         this.cost = 5;
         this.setBounds(480, 160, 640, 256);
         this.setOpaque(false);
-        
     }
     public void paintComponent(Graphics g) {
         g.drawImage(new ImageIcon("Image/Place/castle_"+this.level+".png").getImage(), 0, 0, null);

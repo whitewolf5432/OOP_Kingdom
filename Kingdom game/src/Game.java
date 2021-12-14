@@ -19,7 +19,7 @@ public class Game extends JFrame{
        tip = new Tips();
        end = new Ending();
        frame.setLayout(new BorderLayout());
-       frame.add(end);
+       frame.add(home);
        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
        frame.setResizable(false);
        frame.setSize(1280, 740);

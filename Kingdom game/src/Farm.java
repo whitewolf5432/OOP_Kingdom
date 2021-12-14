@@ -9,7 +9,7 @@ public class Farm extends JPanel implements PlaceInterface{
     private int[] word;
     
     public Farm() {
-        this.cost = 1;
+        this.cost = 10;
         this.time = 5;
         word = new int[] {0, 0, 1, 0};
         this.setBounds(0, 256, 640, 256);
@@ -46,43 +46,43 @@ public class Farm extends JPanel implements PlaceInterface{
                 this.value = 5;
                 this.cost = 280;
                 this.time = 12;
-                this.word = new int[] {2,0,0,0};
+                this.word = new int[] {0,0,7,0};
                 break;
             case 4:
                 this.value = 9;
                 this.cost = 700;
                 this.time = 15;
-                this.word = new int[] {3,0,0,0};
+                this.word = new int[] {0,0,10,0};
                 break;
             case 5:
                 this.value = 13;
                 this.cost = 3000;
-                this.time = 16;
-                this.word = new int[] {3,0,0,0};
+                this.time = 18;
+                this.word = new int[] {0,0,15,0};
                 break;
             case 6:
                 this.value = 27;
                 this.cost = 9500;
-                this.time = 10;
-                this.word = new int[] {1,0,0,0};
+                this.time = 20;
+                this.word = new int[] {0,0,18,0};
                 break;
             case 7:
                 this.value = 90;
                 this.cost = 30000;
-                this.time = 10;
-                this.word = new int[] {1,0,0,0};
+                this.time = 23;
+                this.word = new int[] {0,0,23,0};
                 break;
             case 8:
                 this.value = 200;
                 this.cost = 87500;
-                this.time = 10;
-                this.word = new int[] {1,0,0,0};
+                this.time = 25;
+                this.word = new int[] {0,0,26,0};
                 break;
             case 9:
                 this.value = 500;
                 this.cost = 500000;
-                this.time = 10;
-                this.word = new int[] {1,0,0,0};
+                this.time = 30;
+                this.word = new int[] {0,0,35,0};
                 break;
             case 10:
                 this.value = 5000;

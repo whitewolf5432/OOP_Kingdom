@@ -26,7 +26,7 @@ public class Build implements Runnable, KeyListener{
         lowerCase = "abcdefghijklmnopqrstuvwxyz";
         upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         number = "0123456789";
-        symbol = "!@#$%^&*()-_=+{[}]\\|;:'\"`~,<.>/?";
+        symbol = "!@#$%^&*()-_=+{[}]\\|;:'\",<.>/?";
         storeWord = "";
         strMiniGame = new ArrayList();
         frame.setLayout(null);
@@ -41,11 +41,10 @@ public class Build implements Runnable, KeyListener{
         top.add(topLabel);
         bot.setBounds(0, 75, 410, 1000);
         bot.setBackground(Color.orange);
-        topPanel();
         botPanel();
         frame.add(top, BorderLayout.NORTH);
         frame.add(bot, BorderLayout.SOUTH);
-        frame.setSize(415, 90+(80 * (len / 10 + 1) - (len / 10 * 15)));
+        frame.setSize(415, 100+(70 * (len / 10 + 1) - (len / 10 * 10)));
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLocationRelativeTo(null);
@@ -67,11 +66,6 @@ public class Build implements Runnable, KeyListener{
     }
     public boolean getState() {
         return state;
-    }
-    public static void main(String[] args) {
-        new Build(new int[] {0, 0, 0, 8}, 5);
-    }
-    public void topPanel() {
     }
     public void botPanel() {
         for(int i=0; i < word[0]; i++) {

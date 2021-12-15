@@ -2,7 +2,6 @@
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-
 public class Credit extends javax.swing.JPanel {
 
     public Credit() {
@@ -122,38 +121,42 @@ public class Credit extends javax.swing.JPanel {
             }
         });
         
-        ImageIcon im = new ImageIcon(new javax.swing.ImageIcon("Image/Game/images.jpg").getImage());
+        ImageIcon nuea = new ImageIcon(new javax.swing.ImageIcon("Image/Team/Nuea.png").getImage().getScaledInstance(170, 200,  java.awt.Image.SCALE_SMOOTH));
+        ImageIcon kong = new ImageIcon(new javax.swing.ImageIcon("Image/Team/Kong.png").getImage().getScaledInstance(200, 271,  java.awt.Image.SCALE_SMOOTH));
+        ImageIcon big = new ImageIcon(new javax.swing.ImageIcon("Image/Team/Big.jpg").getImage().getScaledInstance(165, 300,  java.awt.Image.SCALE_SMOOTH));
+        ImageIcon program = new ImageIcon(new javax.swing.ImageIcon("Image/Team/Program.jpeg").getImage().getScaledInstance(170, 300,  java.awt.Image.SCALE_SMOOTH));
+        ImageIcon roong = new ImageIcon(new javax.swing.ImageIcon("Image/Team/Roong.jpg").getImage().getScaledInstance(173, 256,  java.awt.Image.SCALE_SMOOTH));
         ImageIcon bg = new ImageIcon(new javax.swing.ImageIcon("Image/Game/1920x1080_px_A_Bastards_Tale_knight_Pixel_Art_video_games-1325043.jpeg").getImage());
         ImageIcon bt = new ImageIcon(new javax.swing.ImageIcon("Image/Game/butcredit.png").getImage());
         
         add(jButton1);
         jButton1.setBounds(540, 550, 190, 60);
 
-        jLabel1.setIcon((Icon) im);
+        jLabel1.setIcon((Icon) nuea);
         jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.black, java.awt.Color.darkGray));
         add(jLabel1);
-        jLabel1.setBounds(120, 250, 170, 190);
+        jLabel1.setBounds(120, 225, 170, 190);
 
-        jLabel2.setIcon((Icon) im);
+        jLabel2.setIcon((Icon) kong);
         jLabel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.black, java.awt.Color.darkGray));
         add(jLabel2);
-        jLabel2.setBounds(340, 250, 170, 190);
+        jLabel2.setBounds(340, 225, 170, 190);
 
-        jLabel3.setIcon((Icon) im);
+        jLabel3.setIcon((Icon) big);
         jLabel3.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.black, java.awt.Color.darkGray));
         jLabel3.setVerifyInputWhenFocusTarget(false);
         add(jLabel3);
-        jLabel3.setBounds(560, 250, 170, 190);
+        jLabel3.setBounds(560, 225, 170, 190);
 
-        jLabel4.setIcon((Icon) im);
+        jLabel4.setIcon((Icon) program);
         jLabel4.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.black, java.awt.Color.darkGray));
         add(jLabel4);
-        jLabel4.setBounds(780, 250, 170, 190);
+        jLabel4.setBounds(780, 225, 170, 190);
 
-        jLabel5.setIcon((Icon) im);
+        jLabel5.setIcon((Icon) roong);
         jLabel5.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.black, java.awt.Color.darkGray));
         add(jLabel5);
-        jLabel5.setBounds(1000, 250, 170, 190);
+        jLabel5.setBounds(1000, 225, 170, 190);
 
         jLabel7.setIcon((Icon) bt);
         jLabel7.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.black, java.awt.Color.darkGray));

@@ -4,20 +4,10 @@ import javax.swing.*;
 
 public class Menubar extends JPanel implements ActionListener{
     private Player player;
-    private Farm farm;
-    private Town town;
-    private Castle castle;
-    private Market market;
-    private Military military;
     private JButton home;
     
-    public Menubar(Player player, Town town, Farm farm, Castle castle, Market market, Military military){
+    public Menubar(Player player){
         this.player = player;
-        this.farm = farm;
-        this.town = town;
-        this.castle = castle;
-        this.market=  market;
-        this.military = military;
         home = new JButton(new ImageIcon("Image/Menubar/home.png"));
         home.setFocusable(false);
         home.setFocusPainted(false);
@@ -32,11 +22,11 @@ public class Menubar extends JPanel implements ActionListener{
         this.setOpaque(false);
     }
     public void paintComponent(Graphics g){
-        g.drawImage(new ImageIcon("Image/Menubar/progressBar_"+town.getLevel()+".png").getImage(), 99, 25, null);
-        g.drawImage(new ImageIcon("Image/Menubar/progressBar_"+farm.getLevel()+".png").getImage(), 273, 25, null);
-        g.drawImage(new ImageIcon("Image/Menubar/progressBar_"+castle.getLevel()+".png").getImage(), 447, 25, null);
-        g.drawImage(new ImageIcon("Image/Menubar/progressBar_"+market.getLevel()+".png").getImage(), 621, 25, null);
-        g.drawImage(new ImageIcon("Image/Menubar/progressBar_"+military.getLevel()+".png").getImage(), 795, 25, null);
+        g.drawImage(new ImageIcon("Image/Menubar/progressBar_"+player.getTown().getLevel()+".png").getImage(), 99, 25, null);
+        g.drawImage(new ImageIcon("Image/Menubar/progressBar_"+player.getFarm().getLevel()+".png").getImage(), 273, 25, null);
+        g.drawImage(new ImageIcon("Image/Menubar/progressBar_"+player.getCastle().getLevel()+".png").getImage(), 447, 25, null);
+        g.drawImage(new ImageIcon("Image/Menubar/progressBar_"+player.getMarket().getLevel()+".png").getImage(), 621, 25, null);
+        g.drawImage(new ImageIcon("Image/Menubar/progressBar_"+player.getMilitary().getLevel()+".png").getImage(), 795, 25, null);
         g.drawImage(new ImageIcon("Image/Menubar/hCoin.png").getImage(), 953, 10, null);
         g.setFont(new Font("Century", Font.PLAIN, 20)); 
         g.setColor(new Color(0x402a23));

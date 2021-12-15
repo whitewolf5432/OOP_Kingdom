@@ -12,10 +12,10 @@ public class CastleShop extends JPanel implements ActionListener, Runnable{
     public CastleShop() {
         this.setBounds(512, 514,256, 198);
     }
-    public CastleShop(Castle ct, Player player) {
+    public CastleShop(Player player) {
         upgrade  = new JButton("Upgrade");
         this.setBounds(512, 514,256, 198);
-        this.castle = ct;
+        this.castle = player.getCastle();
         this.player = player;
         this.setLayout(null);
         upgrade.setBounds(3,152,250,44);

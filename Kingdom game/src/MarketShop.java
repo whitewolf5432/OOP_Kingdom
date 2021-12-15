@@ -12,10 +12,10 @@ public class MarketShop extends JPanel implements ActionListener, Runnable{
     public MarketShop() {
         this.setBounds(768, 514,256, 198);
     }
-    public MarketShop(Market mk, Player player) {
+    public MarketShop(Player player) {
         upgrade  = new JButton("Upgrade");
         this.setBounds(768, 514,256, 198);
-        this.market = mk;
+        this.market = player.getMarket();
         this.player = player;
         this.setLayout(null);
         upgrade.setBounds(3,152,250,44);

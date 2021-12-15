@@ -12,10 +12,10 @@ public class MilitaryShop extends JPanel implements ActionListener, Runnable{
     public MilitaryShop() {
         this.setBounds(1024, 514,256, 198);
     }
-    public MilitaryShop(Military mt, Player player) {
+    public MilitaryShop(Player player) {
         upgrade  = new JButton("Upgrade");
         this.setBounds(1024, 514,256, 198);
-        this.military = mt;
+        this.military = player.getMilitary();
         this.player = player;
         this.setLayout(null);
         upgrade.setBounds(3,152,250,44);

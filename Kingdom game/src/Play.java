@@ -2,48 +2,37 @@ import javax.swing.*;
 
 public class Play extends JPanel implements Runnable{
     private Player player;
-    private Farm farm;
     private Thread thread;
     public static boolean state = true;
     private boolean pause;
-    private FarmShop farmShop;
     private TownShop townShop;
-    private Town town;
-    private Castle castle;
-    private CastleShop castleShop;
-    private Market market;
+    private FarmShop farmShop;
+    private CastleShop castleShop;;
     private MarketShop marketShop;
-    private Military military;
     private MilitaryShop militaryShop;
     private Menubar menubar;
     
     public Play() {
         player = new Player();
-        farm = new Farm();
-        farmShop = new FarmShop(farm, player);
-        town = new Town();
-        townShop = new TownShop(town, player);
-        castle = new Castle();
-        castleShop = new CastleShop(castle, player);
-        market = new Market();
-        marketShop = new MarketShop(market, player);
-        military = new Military();
-        militaryShop = new MilitaryShop(military, player);
-        menubar = new Menubar(player, town, farm, castle, market, military);
+        townShop = new TownShop(player);
+        farmShop = new FarmShop(player);
+        castleShop = new CastleShop(player);
+        marketShop = new MarketShop(player);
+        militaryShop = new MilitaryShop(player);
+        menubar = new Menubar(player);
         this.setLayout(null);
         this.setSize(1295, 750);
         this.add(menubar);
-        this.add(farm);
+        this.add(player.getFarm());
         this.add(farmShop);
-        this.add(market);
+        this.add(player.getMarket());
         this.add(marketShop);
-        this.add(military);
+        this.add(player.getMilitary());
         this.add(militaryShop);
-        this.add(town);
+        this.add(player.getTown());
         this.add(townShop);
-        this.add(castle);
+        this.add(player.getCastle());
         this.add(castleShop);
-        System.out.println(farm.getLevel());
         thread = new Thread(this);
         
     }
@@ -58,7 +47,7 @@ public class Play extends JPanel implements Runnable{
     public synchronized void run(){
         while(!pause){ 
             menubar.repaint();
-            player.collectMoney(farm.getValue()+town.getValue()+castle.getValue()+market.getValue()+military.getValue(), state);
+            player.collectMoney(player.getValue(), state);
             System.out.println(player.getMoney());
             try{
                 thread.sleep(1000);
@@ -66,7 +55,7 @@ public class Play extends JPanel implements Runnable{
             catch(InterruptedException e){
                 System.out.println(e);
             }
-            if(farm.getLevel() == 10 && town.getLevel() == 10 && castle.getLevel() == 10 && market.getLevel() == 10 && military.getLevel() == 10) {
+            if(player.checkEnd()) {
                 Game.change("Ending");
                 break;
             }

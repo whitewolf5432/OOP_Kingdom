@@ -38,7 +38,7 @@ public class Game extends JFrame{
 			clip = AudioSystem.getClip();
 			clip.open(input);
                         FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-                        gainControl.setValue(-10.0f);
+                        gainControl.setValue(-25.0f);
 			clip.loop(Clip.LOOP_CONTINUOUSLY);
 			clip.start();
 		} catch (UnsupportedAudioFileException e) {

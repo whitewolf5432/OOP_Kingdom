@@ -56,6 +56,12 @@ public class Play extends JPanel implements Runnable{
                 System.out.println(e);
             }
             if(player.checkEnd()) {
+                try{
+                thread.sleep(5000);
+                }
+                catch(InterruptedException e){
+                    System.out.println(e);
+                }
                 Game.change("Ending");
                 break;
             }

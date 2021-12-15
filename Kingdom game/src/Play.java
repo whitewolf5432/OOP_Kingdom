@@ -3,7 +3,7 @@ import javax.swing.*;
 public class Play extends JPanel implements Runnable{
     private Player player;
     private Thread thread;
-    public static boolean state = true;
+    public static boolean state;
     private boolean pause;
     private TownShop townShop;
     private FarmShop farmShop;
@@ -13,6 +13,7 @@ public class Play extends JPanel implements Runnable{
     private Menubar menubar;
     
     public Play() {
+        state = true;
         player = new Player();
         townShop = new TownShop(player);
         farmShop = new FarmShop(player);
@@ -48,7 +49,6 @@ public class Play extends JPanel implements Runnable{
         while(!pause){ 
             menubar.repaint();
             player.collectMoney(player.getValue(), state);
-            System.out.println(player.getMoney());
             try{
                 thread.sleep(1000);
             }

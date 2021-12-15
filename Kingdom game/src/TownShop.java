@@ -9,9 +9,6 @@ public class TownShop extends JPanel implements ActionListener, Runnable{
     private Build build;
     private Font font;
     
-    public TownShop() {
-        this.setBounds(0, 514,256, 198);
-    }
     public TownShop(Player player) {
         upgrade  = new JButton("Upgrade");
         this.setBounds(0, 514,256, 198);

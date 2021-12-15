@@ -9,9 +9,6 @@ public class FarmShop extends JPanel implements ActionListener, Runnable{
     private Build build;
     private Font font;
     
-    public FarmShop() {
-        this.setBounds(256, 514,256, 198);
-    }
     public FarmShop(Player player) {
         upgrade  = new JButton("Upgrade");
         this.setBounds(256, 514,256, 198);

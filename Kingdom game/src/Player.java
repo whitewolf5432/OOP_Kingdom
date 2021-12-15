@@ -15,10 +15,10 @@ public class Player {
         this.money = 5;
 //        for(int i=0; i < 10; i++){
 //            if(i < 9){
-//                farm.upLevel();
+//                castle.upLevel();
 //            }
+//            farm.upLevel();
 //            market.upLevel();
-//            castle.upLevel();
 //            town.upLevel();
 //            military.upLevel();
 //        }

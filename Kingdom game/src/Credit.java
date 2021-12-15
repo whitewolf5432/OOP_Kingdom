@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
@@ -113,66 +114,66 @@ public class Credit extends javax.swing.JPanel {
         jPanel6.add(jPanel11);
         jPanel11.setBounds(150, 290, 120, 120);
         
-        jLabel8.setFont(new java.awt.Font("Century", 0, 15)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Century", java.awt.Font.BOLD, 16)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Pimmada Krunsungnoen");
         add(jLabel8);
-        jLabel8.setBounds(1000, 420, 200, 50);
+        jLabel8.setBounds(990, 430, 250, 50);
 
-        jLabel9.setFont(new java.awt.Font("Century", 0, 15)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Century", java.awt.Font.BOLD, 16)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Krittin   Klinkaew");
+        jLabel9.setText("Krittin Klinkaew");
         add(jLabel9);
-        jLabel9.setBounds(130, 420, 200, 50);
+        jLabel9.setBounds(105, 430, 250, 50);
 
-        jLabel10.setFont(new java.awt.Font("Century", 0, 15)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Century", java.awt.Font.BOLD, 16)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Chanapol   Chuenchuwit");
+        jLabel10.setText("Chanapon Chuenchuwit");
         add(jLabel10);
-        jLabel10.setBounds(350, 420, 200, 50);
+        jLabel10.setBounds(325, 430, 250, 50);
 
-        jLabel11.setFont(new java.awt.Font("Century", 0, 15)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Century", java.awt.Font.BOLD, 16)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Natanon   Hanchana");
+        jLabel11.setText("Natanon Hanchana");
         add(jLabel11);
-        jLabel11.setBounds(570, 420, 200, 50);
+        jLabel11.setBounds(550, 430, 250, 50);
 
-        jLabel12.setFont(new java.awt.Font("Century", 0, 15)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Century", java.awt.Font.BOLD, 16)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Nattapat   Buakamkote");
+        jLabel12.setText("Nattapat Buakamkote");
         add(jLabel12);
-        jLabel12.setBounds(780, 420, 200, 50);
+        jLabel12.setBounds(765, 430, 250, 50);
 
         
-        jLabel13.setFont(new java.awt.Font("Century", 0, 15)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("kuy kuy kuy");
+        jLabel13.setFont(new java.awt.Font("DialogInput", java.awt.Font.BOLD, 12)); // NOI18N
+        jLabel13.setForeground(new Color(0xccffdd));
+        jLabel13.setText("Map Designer, Editor");
         add(jLabel13);
         jLabel13.setBounds(1000, 450, 200, 50);
 
-        jLabel14.setFont(new java.awt.Font("Century", 0, 15)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("kuy kuy kuy");
+        jLabel14.setFont(new java.awt.Font("DialogInput", java.awt.Font.BOLD, 12)); // NOI18N
+        jLabel14.setForeground(new Color(0x809fff));
+        jLabel14.setText("Developer, Graphic Designer");
         add(jLabel14);
-        jLabel14.setBounds(130, 450, 200, 50);
+        jLabel14.setBounds(115, 450, 200, 50);
 
-        jLabel15.setFont(new java.awt.Font("Century", 0, 15)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("kuy kuy kuy");
+        jLabel15.setFont(new java.awt.Font("DialogInput", java.awt.Font.BOLD, 12)); // NOI18N
+        jLabel15.setForeground(new Color(0x999999));
+        jLabel15.setText("Developer, Graphic Designer");
         add(jLabel15);
-        jLabel15.setBounds(350, 450, 200, 50);
+        jLabel15.setBounds(333, 450, 200, 50);
 
-        jLabel16.setFont(new java.awt.Font("Century", 0, 15)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("kuy kuy kuy");
+        jLabel16.setFont(new java.awt.Font("DialogInput", java.awt.Font.BOLD, 12)); // NOI18N
+        jLabel16.setForeground(new Color(0xf2f2f2));
+        jLabel16.setText("Developer, Content");
         add(jLabel16);
-        jLabel16.setBounds(570, 450, 200, 50);
+        jLabel16.setBounds(560, 450, 200, 50);
 
-        jLabel17.setFont(new java.awt.Font("Century", 0, 15)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setText("kuy kuy kuy");
+        jLabel17.setFont(new java.awt.Font("DialogInput", java.awt.Font.BOLD, 12)); // NOI18N
+        jLabel17.setForeground(new Color(0xffa366));
+        jLabel17.setText("<html>Project Manager, Developer,<br/>Debugger</html>");
         add(jLabel17);
-        jLabel17.setBounds(780, 450, 200, 50);
+        jLabel17.setBounds(777, 450, 250, 70);
 
         setMaximumSize(new java.awt.Dimension(1280, 800));
         setMinimumSize(new java.awt.Dimension(1280, 800));

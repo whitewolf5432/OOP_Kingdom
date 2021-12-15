@@ -42,7 +42,7 @@ public class Build implements Runnable, KeyListener{
         top.add(topLabel);
         bot.setBounds(0, 75, 410, 1000);
         bot.setBackground(Color.orange);
-        botPanel();
+        randomCharacter();
         frame.add(top, BorderLayout.NORTH);
         frame.add(bot, BorderLayout.SOUTH);
         frame.setSize(415, 95+(70 * (len / 9 + 1) - (len / 9 * 15)));
@@ -68,7 +68,7 @@ public class Build implements Runnable, KeyListener{
     public boolean getState() {
         return state;
     }
-    public void botPanel() {
+    public void randomCharacter() {
         for(int i=0; i < word[0]; i++) {
             storeWord += lowerCase.charAt((int)(Math.random() * (lowerCase.length()-1)));
         }
@@ -109,7 +109,7 @@ public class Build implements Runnable, KeyListener{
         frame.dispose();
     }
     public synchronized void keyPressed(KeyEvent ke) {
-        if(Character.isDefined(ke.getKeyChar()) && ke.getKeyChar() != KeyEvent.VK_ESCAPE && ke.getKeyChar() != KeyEvent.VK_BACK_SPACE && ke.getKeyChar() != KeyEvent.VK_SPACE) {
+        if(Character.isDefined(ke.getKeyChar()) && ke.getKeyChar() != KeyEvent.VK_BACK_SPACE && ke.getKeyChar() != KeyEvent.VK_SPACE) {
             if(strMiniGame.get(index).getText().charAt(0) == ke.getKeyChar()) {
                 strMiniGame.get(index).setForeground(Color.GREEN);
                 if(++index == strMiniGame.size()) {
@@ -118,7 +118,6 @@ public class Build implements Runnable, KeyListener{
                     strMiniGame.get(index).setForeground(new Color(0xadad85));
                 }
             } else {
-                strMiniGame.get(index).setForeground(Color.RED);
                 fail();
             }
         }

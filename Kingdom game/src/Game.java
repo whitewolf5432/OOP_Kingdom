@@ -13,7 +13,7 @@ public class Game {
     private static Ending end;
 
     public Game() {
-        frame = new JFrame("O(op) Kingdom");
+        frame = new JFrame("OOP Kingdom");
         play = new Play();
         home = new Home();
         credit = new Credit();
